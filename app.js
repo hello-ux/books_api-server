@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const path = require('path')
+
 require('./model/index')
 // require('./model/aside')
 // require('./model/books')
@@ -13,6 +15,8 @@ App.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', ['Content-Type','mytoken']);
     next();
 });
+// 配置静态资源访问
+App.use(express.static(path.join(__dirname, 'public')))
 App.use(bodyParser.json())
 App.use(bodyParser.urlencoded({extended: false}))
 

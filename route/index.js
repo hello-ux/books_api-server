@@ -13,6 +13,8 @@ admin.get('/books',require('./admin/getBooks'))
 admin.get('/searchval', require('./admin/searchval'))
 // 添加图书
 admin.post('/addbooks', require('./admin/addBooks'))
+// 图书封面上传
+admin.post('/upload', require('./admin/upload'))
 // 更新图书
 admin.post('/updatebook', require('./admin/updateBook'))
 // 删除图书
